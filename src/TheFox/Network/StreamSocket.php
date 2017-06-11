@@ -30,11 +30,16 @@ class StreamSocket extends AbstractSocket
     }
 
     /**
+     * @param array $contextOptions
      * @return bool
      */
-    public function listen(): bool
+    public function listen(array $contextOptions = []): bool
     {
-        $handle = @stream_socket_server('tcp://' . $this->ip . ':' . $this->port, $errno, $errstr);
+        $local_socket = 'tcp://' . $this->ip . ':' . $this->port;
+        $flags = STREAM_SERVER_BIND | STREAM_SERVER_LISTEN;
+        $context = stream_context_create($contextOptions);
+        $handle = @stream_socket_server($local_socket, $errno, $errstr, $flags, $context);
+
         if ($handle !== false) {
             $this->setHandle($handle);
             return true;
@@ -147,5 +152,28 @@ class StreamSocket extends AbstractSocket
 
     public function close()
     {
+    }
+
+    /**
+     * @return bool
+     */
+    public function enableEncryption(): bool
+    {
+        $crypto_method = STREAM_CRYPTO_METHOD_TLS_SERVER;
+
+        if (defined('STREAM_CRYPTO_METHOD_TLSv1_2_SERVER')) {
+            $crypto_method |= STREAM_CRYPTO_METHOD_TLSv1_2_SERVER;
+            $crypto_method |= STREAM_CRYPTO_METHOD_TLSv1_1_SERVER;
+        }
+
+        stream_set_blocking($this->getHandle(), true);
+        $result = @stream_socket_enable_crypto($this->getHandle(), true, $crypto_method);
+        stream_set_blocking($this->getHandle(), false);
+
+        if ($result === false) {
+            throw new RuntimeException('TLS negotiation has failed');
+        }
+
+        return true;
     }
 }
