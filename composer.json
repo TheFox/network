@@ -1,30 +1,30 @@
 {
-	"name": "thefox/network",
-	"description": "Networking Library",
-	"license": "GPL-3.0",
-	"type": "library",
-	"keywords": [ "network", "sockets" ],
-	"homepage": "https://fox21.at",
-	"authors": [
-		{
-			"name": "Christian Mayer",
-			"email": "christian@fox21.at",
-			"homepage": "https://fox21.at"
-		}
-	],
-	"require": {
-		"php": "^7.0",
-		"ext-sockets": ">=0"
-	},
-	"require-dev": {
-		"phpstan/phpstan": "^0.7"
-	},
-	"autoload": {
-		"psr-0": { "TheFox": "src" }
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.x.x-dev"
-		}
-	}
+    "name": "thefox/network",
+    "description": "Networking Library",
+    "license": "GPL-3.0",
+    "type": "library",
+    "keywords": [
+        "network",
+        "sockets"
+    ],
+    "homepage": "https://fox21.at",
+    "authors": [
+        {
+            "name": "Christian Mayer",
+            "email": "christian@fox21.at",
+            "homepage": "https://fox21.at"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ext-sockets": ">=0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "TheFox": "src"
+        }
+    }
 }
