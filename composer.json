@@ -23,8 +23,8 @@
         "phpstan/phpstan": "^0.7"
     },
     "autoload": {
-        "psr-0": {
-            "TheFox": "src"
+        "psr-4": {
+            "TheFox\\Network\\": "src"
         }
     }
 }
