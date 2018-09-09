@@ -5,12 +5,12 @@ namespace TheFox\Network;
 abstract class AbstractSocket
 {
     /**
-     * @var resource
+     * @var \resource
      */
     private $handle;
 
     /**
-     * @param resource $handle
+     * @param \resource $handle
      */
     public function setHandle($handle)
     {
@@ -18,7 +18,7 @@ abstract class AbstractSocket
     }
 
     /**
-     * @return resource
+     * @return \resource
      */
     public function getHandle()
     {
