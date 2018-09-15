@@ -1,10 +1,10 @@
 language: php
 php:
-    - 7.0
-    - 7.1
+  - 7.0
+  - 7.1
 install: 
-    - composer install --prefer-source --no-interaction
+  - composer install --prefer-source --no-interaction
 before_script:
-    - phpenv rehash
+  - phpenv rehash
 script:
-    - ./bin/phpstan.sh
+  - ./bin/phpstan.sh
