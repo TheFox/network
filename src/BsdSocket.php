@@ -32,28 +32,28 @@ class BsdSocket extends AbstractSocket
             throw new RuntimeException('socket_create: ' . socket_strerror($errno), $errno);
         }
 
-        $ret = socket_set_option($socket, SOL_SOCKET, SO_KEEPALIVE, 1);
+        //$ret = socket_set_option($socket, SOL_SOCKET, SO_KEEPALIVE, 1);
         $ret = socket_get_option($socket, SOL_SOCKET, SO_KEEPALIVE);
         if ($ret === false) {
             $errno = socket_last_error($socket);
             throw new RuntimeException('socket_get_option SO_KEEPALIVE: ' . socket_strerror($errno), $errno);
         }
 
-        $ret = socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1);
+        //$ret = socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1);
         $ret = socket_get_option($socket, SOL_SOCKET, SO_REUSEADDR);
         if ($ret === false) {
             $errno = socket_last_error($socket);
             throw new RuntimeException('socket_get_option SO_REUSEADDR: ' . socket_strerror($errno), $errno);
         }
 
-        $ret = socket_set_option($socket, SOL_SOCKET, SO_RCVTIMEO, ['sec' => 5, 'usec' => 0]);
+        //$ret = socket_set_option($socket, SOL_SOCKET, SO_RCVTIMEO, ['sec' => 5, 'usec' => 0]);
         $ret = socket_get_option($socket, SOL_SOCKET, SO_RCVTIMEO);
         if ($ret === false) {
             $errno = socket_last_error($socket);
             throw new RuntimeException('socket_get_option SO_RCVTIMEO: ' . socket_strerror($errno), $errno);
         }
 
-        $ret = socket_set_option($socket, SOL_SOCKET, SO_SNDTIMEO, ['sec' => 5, 'usec' => 0]);
+        //$ret = socket_set_option($socket, SOL_SOCKET, SO_SNDTIMEO, ['sec' => 5, 'usec' => 0]);
         $ret = socket_get_option($socket, SOL_SOCKET, SO_SNDTIMEO);
         if ($ret === false) {
             $errno = socket_last_error($socket);
