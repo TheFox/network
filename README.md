@@ -7,7 +7,7 @@
 
 The project outlines as described in my blog post about [Open Source Software Collaboration](https://blog.fox21.at/2019/02/21/open-source-software-collaboration.html).
 
-- The main purpose of this software is to provide common interfaces to networking techniques.
+- The main purpose of this library is to provide common interfaces to networking functionalities.
 - This list is open. Feel free to request features.
 
 ## License
