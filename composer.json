@@ -1,7 +1,7 @@
 {
     "name": "thefox/network",
     "description": "Networking Library",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "type": "library",
     "keywords": [
         "network",
