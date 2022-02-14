@@ -132,7 +132,7 @@ class StreamSocket extends AbstractSocket
      */
     public function read(): string
     {
-        return stream_socket_recvfrom($this->getHandle(), 2048);
+        return fread($this->getHandle(), 2048);
     }
 
     /**
@@ -141,7 +141,7 @@ class StreamSocket extends AbstractSocket
      */
     public function write(string $data): int
     {
-        $rv = @stream_socket_sendto($this->getHandle(), $data);
+        $rv = @fwrite($this->getHandle(), $data);
         return $rv;
     }
 
